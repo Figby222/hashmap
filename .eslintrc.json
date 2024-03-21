@@ -24,6 +24,10 @@
         "no-unused-vars": "off",
         "no-underscore-dangle": "off",
         "prefer-const": "off",
-        "no-plusplus": "off"
+        "no-plusplus": "off",
+        "eslint-plugin-import/extensions": [
+            "never"
+        ]
     }
+    
 }
