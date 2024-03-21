@@ -1,0 +1,80 @@
+CREATE FACTORY HashMap()
+    THIS ARRAY _buckets
+    THIS FLOAT _loadfactor = 0.75
+    THIS INT _capacity = 16
+    
+    FUNCTION hash(key)
+        SET hashCode = 0
+        SET CONST primeNumber = 31
+        FOR i of key
+            SET hashcode = (primeNumber + (character code of key[i])) % _capacity
+        
+        RETURN hashcode
+
+    FUNCTION set(key, value)
+        SET hashCode = hash(key)
+        SET value of key of _buckets[hashCode] to value
+
+    FUNCTION get(key) {
+        SET hashCode = hash(key)
+        RETURN value at key of _buckets[hashCode]
+    }
+
+    FUNCTION has(key)
+        SET hashCode = hash(key)
+        IF key exists in _buckets[hashCode]
+            RETURN true
+        ELSE
+            RETURN false
+
+    FUNCTION remove(key)
+        SET hashCode = hash(key)
+        IF key exists in _buckets[hashCode]
+            REMOVE key
+            RETURN true
+        ELSE
+            RETURN false
+        
+    FUNCTION length()
+        SET hashMapLength = 0
+        FOR bucket in _buckets
+            FOR key in bucket
+                INCREMENT hashMapLength
+        
+        RETURN hashMapLength
+    
+    FUNCTION clear()
+        FOR bucket in _buckets
+            EMPTY bucket
+    
+    FUNCTION keys()
+        SET keysArr = []
+        FOR bucket in _buckets
+            FOR key in bucket
+                PUSH key to keysArr
+
+        RETURN keysArr
+    
+    FUNCTION values()
+        SET valuesArr = []
+        FOR bucket in _buckets
+            FOR key in bucket
+                PUSH value in key to valuesArr
+
+        RETURN valuesArr
+
+    FUNCTION entries()
+        SET entriesArr = []
+        FOR bucket in _buckets
+            FOR key in bucket
+                SET pair = []
+                PUSH key to pair
+                PUSH value in key to pair
+                PUSH pair to entriesArr
+        
+        RETURN entriesArr
+
+    
+
+    FUNCTION increaseCapacity()
+        SET THIS _capacity *= 2
