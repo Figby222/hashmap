@@ -5,7 +5,7 @@ const LinkedList = function() {
 };
 
 LinkedList.prototype.tail = function() {
-    if (Object.values(this._linkedList).length = 0) {
+    if (Object.values(this._linkedList).length == 0) {
         return false;
     }
 
@@ -21,7 +21,8 @@ LinkedList.prototype.tail = function() {
 LinkedList.prototype.append = function(key, value) {
     const node = new Node(key, value);
 
-    if (Object.values(this._linkedList).length = 0) {
+
+    if (Object.values(this._linkedList).length == 0) {
         this._linkedList = node;
         return;
     }
