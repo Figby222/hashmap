@@ -1,0 +1,86 @@
+FACTORY LinkedList()
+    THIS OBJ _linkedList
+    
+    FUNCTION tail() {
+        VAR currentNode
+        WHILE currentNode.nextNode IS NOT null
+            SET currentNode = currentNode.nextNode
+        
+        RETURN currentNode
+    
+
+    FUNCTION append(key, value)
+        VAR node = new Node from args
+        IF _linkedList is EMPTY
+            SET _linkedList to Node
+        ELSE
+            SET tail()->nextNode = node
+    
+    FUNCTION pop()
+        VAR currentNode
+        WHILE currentNode.nextNode.nextNode IS NOT null
+            SET currentNode = currentNode.nextNode
+
+        SET currentNode.nextNode = null
+    
+    FUNCTION set(key, value)
+        VAR node = THIS get(key)
+        IF THIS node IS EQUAL TO true
+            SET node.value = value
+            RETURN
+        
+        THIS append(key, value)
+
+        
+
+
+    FUNCTION get(key)
+        VAR currentNode
+        WHILE currentNode IS NOT null
+            IF currentNode.key IS EQUAL TO key
+                RETURN currentNode
+            
+            SET currentNode = currentNode.nextNode
+
+        RETURN false
+
+    FUNCTION has(key)
+        VAR currentNode
+        WHILE currentNode IS NOT null
+            IF currentNode.key IS EQUAL TO key
+                RETURN true
+            
+            SET currentNode = currentNode.nextNode
+        
+        RETURN false
+
+    FUNCTION keys()
+        ARRAY keysArr
+        VAR currentNode
+        WHILE currentNode IS NOT null
+            PUSH currentNode.key TO keysArr
+            SET currentNode = currentNode.nextNode
+
+        RETURN keysArr
+
+    FUNCTION values()
+        ARRAY valuesArr
+        VAR currentNode
+        WHILE currentNode IS NOT null
+            PUSH currentNode.value TO valuesArr
+            SET currentNode = currentNode.nextNode
+
+        RETURN valuesArr
+
+    FUNCTION entries()
+        ARRAY entriesArr
+        VAR currentNode
+        WHILE currentNode IS NOT null
+            PUSH ARRAY of currentNode's key and value to entriesArr
+
+        RETURN entriesArr
+
+    FUNCTION clear()
+        SET _linkedList = {}
+    
+    }

@@ -50,7 +50,7 @@ CREATE FACTORY HashMap()
     FUNCTION keys()
         SET keysArr = []
         FOR bucket in _buckets
-            FOR key in bucket
+            FOR key in bucket.keys()
                 PUSH key to keysArr
 
         RETURN keysArr
@@ -58,20 +58,17 @@ CREATE FACTORY HashMap()
     FUNCTION values()
         SET valuesArr = []
         FOR bucket in _buckets
-            FOR key in bucket
-                PUSH value in key to valuesArr
+            FOR value of bucket.values()
+                PUSH value to valuesArr
 
         RETURN valuesArr
 
     FUNCTION entries()
         SET entriesArr = []
         FOR bucket in _buckets
-            FOR key in bucket
-                SET pair = []
-                PUSH key to pair
-                PUSH value in key to pair
+            FOR pair in bucket.entries()
                 PUSH pair to entriesArr
-        
+
         RETURN entriesArr
 
     

@@ -1,0 +1,3 @@
+FACTORY Node(key, value, nextNode = null) {
+    SET ALL args to equal their inputted value
+}
