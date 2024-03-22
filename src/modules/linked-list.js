@@ -80,6 +80,17 @@ LinkedList.prototype.keys = function() {
     return keysArr;
 }
 
+LinkedList.prototype.values = function() {
+    let valuesArr = []
+    let currentNode = this._linkedList;
+    while (currentNode) {
+        valuesArr.push(currentNode.value);
+        currentNode = currentNode.nextNode;
+    }
+
+    return valuesArr;
+}
+
 LinkedList.prototype.getList = function() {
     return this._linkedList;
 }
