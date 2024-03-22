@@ -69,6 +69,17 @@ LinkedList.prototype.has = function(key) {
     return false;
 }
 
+LinkedList.prototype.keys = function() {
+    let keysArr = [];
+    let currentNode = this._linkedList;
+    while (currentNode) {
+        keysArr.push(currentNode.key);
+        currentNode = currentNode.nextNode;
+    }
+
+    return keysArr;
+}
+
 LinkedList.prototype.getList = function() {
     return this._linkedList;
 }

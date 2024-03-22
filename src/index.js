@@ -23,6 +23,8 @@ console.log(myList.get("afidusgifdaug"));
 
 console.log(myList.has("afidusgifdaug"));
 
+console.log(myList.keys());
+
 
 // import HashMap from "./modules/hash-map.js";
 
