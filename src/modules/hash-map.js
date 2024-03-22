@@ -65,6 +65,7 @@ HashMap.prototype.remove = function(key) {
     if (bucket.has(key)) {
         bucket.remove(key);
         if (bucket.checkEmpty()) {
+            this._buckets.splice(hashCode, 1);
             this._bucketsFilled--;
         }
     }
