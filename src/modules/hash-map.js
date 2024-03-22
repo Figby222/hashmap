@@ -97,6 +97,12 @@ HashMap.prototype.values = function() {
     return valuesArr;
 }
 
+HashMap.prototype.entries = function() {
+    let entriesArr = [];
+    this._buckets.forEach((bucket) => entriesArr = entriesArr.concat(bucket.entries()));
+    return entriesArr;
+}
+
 HashMap.prototype.getMap = function() { return this._buckets };
 
 export default HashMap;

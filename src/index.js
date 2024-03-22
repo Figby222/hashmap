@@ -20,6 +20,7 @@ console.log(myHashMap.length());
 console.log(myHashMap.getMap());
 console.log(myHashMap.keys());
 console.log(myHashMap.values());
+console.log(myHashMap.entries());
 // import LinkedList from './modules/linked-list.js';
 
 // const myList = new LinkedList();
