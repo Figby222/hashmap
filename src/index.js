@@ -10,6 +10,12 @@ myList.append("afidusgifdaug", 4);
 
 console.log(myList.tail());
 
+console.log(myList.getList());
+
+myList.pop();
+
+console.log(myList.getList());
+
 
 
 // import HashMap from "./modules/hash-map.js";

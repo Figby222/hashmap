@@ -30,6 +30,17 @@ LinkedList.prototype.append = function(key, value) {
     this.tail().nextNode = node;
 }
 
+LinkedList.prototype.pop = function() {
+    let currentNode = this._linkedList;
+
+    while (currentNode.nextNode.nextNode) {
+        currentNode = currentNode.nextNode;
+    }
+
+    currentNode.nextNode = null;
+
+}
+
 LinkedList.prototype.getList = function() {
     return this._linkedList;
 }
