@@ -2,6 +2,7 @@ import Node from './node.js';
 
 const LinkedList = function() {
     this._linkedList = {};
+    this.isEmpty = true;
 };
 
 LinkedList.prototype.tail = function() {
@@ -24,6 +25,7 @@ LinkedList.prototype.append = function(key, value) {
 
     if (Object.values(this._linkedList).length == 0) {
         this._linkedList = node;
+        this.isEmpty = false;
         return;
     }
 
@@ -154,6 +156,7 @@ LinkedList.prototype.remove = function(key) {
 
 LinkedList.prototype.clear = function() {
     this._linkedList = {};
+    this.isEmpty = true;
 }
 
 LinkedList.prototype.getList = function() {
