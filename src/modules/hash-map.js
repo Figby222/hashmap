@@ -26,10 +26,8 @@ HashMap.prototype.set = function(key, value) {
     const hashCode = this.hash(key);
     if (!(this._buckets[hashCode])) {
         this._buckets[hashCode] = new LinkedList();
-        console.log("a");
         this._bucketsFilled++;
         
-        console.log((this._bucketsFilled / this._capacity));
         if ((this._bucketsFilled / this._capacity) >= this._loadFactor) {
             this.increaseCapacity();
         }
@@ -61,7 +59,6 @@ HashMap.prototype.has = function(key) {
 HashMap.prototype.remove = function(key) {
     const hashCode = this.hash(key);
     const bucket = this._buckets[hashCode];
-    console.log("BEfore remove: ", this._bucketsFilled)
     if (bucket.has(key)) {
         bucket.remove(key);
         if (bucket.checkEmpty()) {
@@ -69,7 +66,6 @@ HashMap.prototype.remove = function(key) {
             this._bucketsFilled--;
         }
     }
-    console.log("After remove: ", this._bucketsFilled)
 
 }
 
