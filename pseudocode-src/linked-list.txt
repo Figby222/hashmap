@@ -80,6 +80,15 @@ FACTORY LinkedList()
 
         RETURN entriesArr
 
+    FUNCTION size()
+        INT size = 0
+        VAR currentNode
+        WHILE currentNode IS NOT null
+            INCREMENT size
+            SET currentNode = currentNode.nextNode
+        
+        RETURN size
+        
     FUNCTION clear()
         SET _linkedList = {}
     
