@@ -55,6 +55,20 @@ LinkedList.prototype.get = function(key) {
     return false;
 }
 
+LinkedList.prototype.has = function(key) {
+    let currentNode = this._linkedList;
+
+    while (currentNode) {
+        if (currentNode.key === key) {
+            return true;
+        }
+
+        currentNode = currentNode.nextNode;
+    }
+
+    return false;
+}
+
 LinkedList.prototype.getList = function() {
     return this._linkedList;
 }
