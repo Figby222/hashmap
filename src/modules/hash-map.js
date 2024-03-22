@@ -48,6 +48,16 @@ HashMap.prototype.get = function(key) {
     return this._buckets[hashCode].get(key);
 }
 
+HashMap.prototype.has = function(key) {
+    const hashCode = this.hash(key);
+
+    if (!this._buckets[hashCode]) {
+        return false;
+    }
+
+    return this._buckets[hashCode].has(key);
+}
+
 HashMap.prototype.getMap = function() { return this._buckets };
 
 export default HashMap;

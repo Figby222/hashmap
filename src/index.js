@@ -7,6 +7,8 @@ console.log(myHashMap.set("agdsfgdasgads", 4))
 console.log(myHashMap.getMap());
 console.log(myHashMap.get("Hello"));
 console.log(myHashMap.get("iofdughadosiygffaoidsuyfdoiguy"));
+console.log(myHashMap.has("Hello"));
+console.log(myHashMap.has("audfgikoudfsygikfuayg"));
 // import LinkedList from './modules/linked-list.js';
 
 // const myList = new LinkedList();
