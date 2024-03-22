@@ -76,8 +76,12 @@ HashMap.prototype.length = function() {
     let length = 0;
 
     this._buckets.forEach((bucket) => length += bucket.size());
-    
+
     return length;
+}
+
+HashMap.prototype.clear = function() {
+    this._buckets.forEach((bucket) => bucket.clear());
 }
 
 HashMap.prototype.getMap = function() { return this._buckets };
