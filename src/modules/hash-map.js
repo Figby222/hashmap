@@ -58,6 +58,20 @@ HashMap.prototype.has = function(key) {
     return this._buckets[hashCode].has(key);
 }
 
+HashMap.prototype.remove = function(key) {
+    const hashCode = this.hash(key);
+    const bucket = this._buckets[hashCode];
+    console.log("BEfore remove: ", this._bucketsFilled)
+    if (bucket.has(key)) {
+        bucket.remove(key);
+        if (bucket.checkEmpty()) {
+            this._bucketsFilled--;
+        }
+    }
+    console.log("After remove: ", this._bucketsFilled)
+
+}
+
 HashMap.prototype.getMap = function() { return this._buckets };
 
 export default HashMap;
