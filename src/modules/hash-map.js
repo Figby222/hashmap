@@ -84,6 +84,12 @@ HashMap.prototype.clear = function() {
     this._buckets.forEach((bucket) => bucket.clear());
 }
 
+HashMap.prototype.keys = function() {
+    let keysArr = [];
+    this._buckets.forEach((bucket) => keysArr = keysArr.concat(bucket.keys()));
+    return keysArr;
+}
+
 HashMap.prototype.getMap = function() { return this._buckets };
 
 export default HashMap;

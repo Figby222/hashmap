@@ -18,8 +18,7 @@ console.log(myHashMap.length());
 myHashMap.set("OUAhdfiloduswfg", 8);
 console.log(myHashMap.length());
 console.log(myHashMap.getMap());
-myHashMap.clear();
-console.log(myHashMap.getMap());
+console.log(myHashMap.keys());
 // import LinkedList from './modules/linked-list.js';
 
 // const myList = new LinkedList();
