@@ -118,10 +118,16 @@ LinkedList.prototype.entries = function() {
 LinkedList.prototype.size = function() {
     let size = 0;
     let currentNode = this._linkedList;
-    while (currentNode) {
-        currentNode = currentNode.nextNode;
 
+    if (this.checkEmpty()) {
+        return 0;
+    }
+
+    while (currentNode) {
         size++;
+        
+        currentNode = currentNode.nextNode;
+        
     }
 
     return size;
