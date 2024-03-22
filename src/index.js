@@ -1,5 +1,19 @@
-import HashMap from "./modules/hash-map.js";
+import LinkedList from './modules/linked-list.js';
 
-const myHashMap = new HashMap()
+const myList = new LinkedList();
 
-console.log(myHashMap.hash("Hello"))
+myList.append("Test", 1);
+
+console.log(myList.getList());
+
+myList.append("afidusgifdaug", 4);
+
+console.log(myList.tail());
+
+
+
+// import HashMap from "./modules/hash-map.js";
+
+// const myHashMap = new HashMap()
+
+// console.log(myHashMap.hash("Hello"))

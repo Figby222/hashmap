@@ -1,9 +1,11 @@
+import Node from './node.js';
+
 const LinkedList = function() {
     this._linkedList = {};
 };
 
 LinkedList.prototype.tail = function() {
-    if (Object.values(_linkedList).length = 0) {
+    if (Object.values(this._linkedList).length = 0) {
         return false;
     }
 
@@ -15,3 +17,20 @@ LinkedList.prototype.tail = function() {
 
     return currentNode;
 }
+
+LinkedList.prototype.append = function(key, value) {
+    const node = new Node(key, value);
+
+    if (Object.values(this._linkedList).length = 0) {
+        this._linkedList = node;
+        return;
+    }
+
+    this.tail().nextNode = node;
+}
+
+LinkedList.prototype.getList = function() {
+    return this._linkedList;
+}
+
+export default LinkedList;
