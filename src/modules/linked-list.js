@@ -104,6 +104,18 @@ LinkedList.prototype.entries = function() {
     return entriesArr;
 }
 
+LinkedList.prototype.size = function() {
+    let size = 0;
+    let currentNode;
+    while (currentNode) {
+        currentNode = currentNode.nextNode;
+
+        size++;
+    }
+
+    return size;
+}
+
 LinkedList.prototype.getList = function() {
     return this._linkedList;
 }
