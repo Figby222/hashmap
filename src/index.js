@@ -9,6 +9,9 @@ console.log(myHashMap.get("Hello"));
 console.log(myHashMap.get("iofdughadosiygffaoidsuyfdoiguy"));
 console.log(myHashMap.has("Hello"));
 console.log(myHashMap.has("audfgikoudfsygikfuayg"));
+console.log(myHashMap.hash("Hello"))
+myHashMap._buckets[myHashMap.hash("Hello")].remove("Hello");
+console.log(myHashMap.getMap());
 // import LinkedList from './modules/linked-list.js';
 
 // const myList = new LinkedList();

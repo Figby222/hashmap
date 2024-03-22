@@ -127,6 +127,31 @@ LinkedList.prototype.size = function() {
     return size;
 }
 
+LinkedList.prototype.remove = function(key) {
+    let currentNode = this._linkedList;
+
+    if (currentNode.key == key) {
+        this._linkedList = currentNode.nextNode;
+        if (!(this._linkedList)) {
+            this.clear();
+        }
+
+        return;
+    }
+
+    while (currentNode) {
+
+        if (currentNode.nextNode.key == key) {
+            currentNode.nextNode = currentNode.nextNode.nextNode;
+            return;
+        }
+
+        currentNode = currentNode.nextNode;
+    }
+    
+    return false;
+}
+
 LinkedList.prototype.clear = function() {
     this._linkedList = {};
 }
@@ -136,3 +161,6 @@ LinkedList.prototype.getList = function() {
 }
 
 export default LinkedList;
+
+// RETURN PLAIN OBJ {} INSTEAD OF _linkedList.
+// THAT WAY YOU CAN ACCESS THE LINKEDLIST WITH JUST *THIS*
