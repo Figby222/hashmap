@@ -1,45 +1,46 @@
-import LinkedList from './modules/linked-list.js';
+import HashMap from "./modules/hash-map.js";
 
-const myList = new LinkedList();
+const myHashMap = new HashMap()
 
-myList.append("Test", 1);
+console.log(myHashMap.set("Hello", 4))
+console.log(myHashMap.getMap());
+// import LinkedList from './modules/linked-list.js';
 
-console.log(myList.getList());
+// const myList = new LinkedList();
 
-myList.append("afidusgifdaug", 4);
+// myList.append("Test", 1);
 
-console.log(myList.tail());
+// console.log(myList.getList());
 
-console.log(myList.getList());
+// myList.append("afidusgifdaug", 4);
 
-myList.pop();
+// console.log(myList.tail());
 
-console.log(myList.getList());
+// console.log(myList.getList());
 
-myList.append("afidusgifdaug", 4);
+// myList.pop();
 
-console.log(myList.get("afidusgifdaug"));
+// console.log(myList.getList());
+
+// myList.append("afidusgifdaug", 4);
+
+// console.log(myList.get("afidusgifdaug"));
 
 
-console.log(myList.has("afidusgifdaug"));
+// console.log(myList.has("afidusgifdaug"));
 
-console.log(myList.keys());
+// console.log(myList.keys());
 
-console.log(myList.values());
+// console.log(myList.values());
 
-console.log(myList.entries());
+// console.log(myList.entries());
 
-console.log(myList.size());
+// console.log(myList.size());
 
-myList.clear();
+// myList.clear();
 
-myList.set("Test", 4);
-myList.set("OAFUEhyoiuysagdoliuyfag", 4);
+// myList.set("Test", 4);
+// myList.set("OAFUEhyoiuysagdoliuyfag", 4);
 
-console.log(myList.getList());
+// console.log(myList.getList());
 
-// import HashMap from "./modules/hash-map.js";
-
-// const myHashMap = new HashMap()
-
-// console.log(myHashMap.hash("Hello"))
