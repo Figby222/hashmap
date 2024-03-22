@@ -31,7 +31,7 @@ HashMap.prototype.set = function(key, value) {
         
         console.log((this._bucketsFilled / this._capacity));
         if ((this._bucketsFilled / this._capacity) >= this._loadFactor) {
-            // double capacity
+            this.increaseCapacity();
         }
     }
 
@@ -102,6 +102,10 @@ HashMap.prototype.entries = function() {
     this._buckets.forEach((bucket) => entriesArr = entriesArr.concat(bucket.entries()));
     return entriesArr;
 }
+
+HashMap.prototype.increaseCapacity = function() {
+    this._capacity *= 2;
+};
 
 HashMap.prototype.getMap = function() { return this._buckets };
 

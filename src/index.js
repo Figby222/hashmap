@@ -21,6 +21,7 @@ console.log(myHashMap.getMap());
 console.log(myHashMap.keys());
 console.log(myHashMap.values());
 console.log(myHashMap.entries());
+myHashMap.increaseCapacity();
 // import LinkedList from './modules/linked-list.js';
 
 // const myList = new LinkedList();
