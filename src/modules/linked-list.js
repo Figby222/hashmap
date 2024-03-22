@@ -41,6 +41,20 @@ LinkedList.prototype.pop = function() {
 
 }
 
+LinkedList.prototype.get = function(key) {
+    let currentNode = this._linkedList;
+
+    while (currentNode) {
+        if (currentNode.key === key) {
+            return currentNode;
+        }
+
+        currentNode = currentNode.nextNode;
+    }
+
+    return false;
+}
+
 LinkedList.prototype.getList = function() {
     return this._linkedList;
 }
