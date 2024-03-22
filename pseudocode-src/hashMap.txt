@@ -1,6 +1,7 @@
 CREATE FACTORY HashMap()
     THIS ARRAY _buckets
     THIS FLOAT _loadfactor = 0.75
+    THIS INT _bucketsFilled = 0;
     THIS INT _capacity = 16
     
     FUNCTION hash(key)
@@ -13,7 +14,12 @@ CREATE FACTORY HashMap()
 
     FUNCTION set(key, value)
         SET hashCode = hash(key)
-        SET value of key of _buckets[hashCode] to value
+        IF _buckets[hashCode] IS EMPTY
+            INCREMENT _bucketsFilled
+            IF (_bucketsFilled / _capacity) IS MORE THAN _loadFactor
+                CALL this.increaseCapacity()
+        CALL _buckets[hashCode].set(key, value)
+        
 
     FUNCTION get(key) {
         SET hashCode = hash(key)
@@ -50,8 +56,7 @@ CREATE FACTORY HashMap()
     FUNCTION keys()
         SET keysArr = []
         FOR bucket in _buckets
-            FOR key in bucket.keys()
-                PUSH key to keysArr
+            CONCATENATE bucket.keys() to keysArr
 
         RETURN keysArr
     
