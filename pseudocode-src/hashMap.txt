@@ -15,6 +15,7 @@ CREATE FACTORY HashMap()
     FUNCTION set(key, value)
         SET hashCode = hash(key)
         IF _buckets[hashCode] IS EMPTY
+            CREATE new LinkedList at _buckets[hashCode]
             INCREMENT _bucketsFilled
             IF (_bucketsFilled / _capacity) IS MORE THAN _loadFactor
                 CALL this.increaseCapacity()
@@ -37,7 +38,8 @@ CREATE FACTORY HashMap()
         SET hashCode = hash(key)
         IF key exists in _buckets[hashCode]
             REMOVE key
-            RETURN true
+            IF _buckets[hashCode].isEmpty
+                DECREMENT _bucketsFilled
         ELSE
             RETURN false
         
