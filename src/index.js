@@ -20,6 +20,7 @@ myList.append("afidusgifdaug", 4);
 
 console.log(myList.get("afidusgifdaug"));
 
+console.log(myList.has("afidusgifdaug"));
 
 
 // import HashMap from "./modules/hash-map.js";
