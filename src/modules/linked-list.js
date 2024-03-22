@@ -81,7 +81,7 @@ LinkedList.prototype.keys = function() {
 }
 
 LinkedList.prototype.values = function() {
-    let valuesArr = []
+    let valuesArr = [];
     let currentNode = this._linkedList;
     while (currentNode) {
         valuesArr.push(currentNode.value);
@@ -89,6 +89,19 @@ LinkedList.prototype.values = function() {
     }
 
     return valuesArr;
+}
+
+LinkedList.prototype.entries = function() {
+    let entriesArr = [];
+    let currentNode = this._linkedList;
+    while (currentNode) {
+        const pair = [currentNode.key, currentNode.value];
+        entriesArr.push(pair)
+
+        currentNode = currentNode.nextNode;
+    }
+    
+    return entriesArr;
 }
 
 LinkedList.prototype.getList = function() {
