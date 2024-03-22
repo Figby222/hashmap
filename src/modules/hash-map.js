@@ -38,6 +38,16 @@ HashMap.prototype.set = function(key, value) {
     this._buckets[hashCode].set(key, value);
 }
 
+HashMap.prototype.get = function(key) {
+    const hashCode = this.hash(key);
+
+    if (!this._buckets[hashCode]) {
+        return false;
+    }
+
+    return this._buckets[hashCode].get(key);
+}
+
 HashMap.prototype.getMap = function() { return this._buckets };
 
 export default HashMap;
