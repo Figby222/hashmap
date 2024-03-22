@@ -31,6 +31,8 @@ console.log(myList.entries());
 
 console.log(myList.size());
 
+myList.clear();
+
 // import HashMap from "./modules/hash-map.js";
 
 // const myHashMap = new HashMap()
