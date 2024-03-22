@@ -12,6 +12,11 @@ console.log(myHashMap.has("audfgikoudfsygikfuayg"));
 console.log(myHashMap.hash("Hello"))
 myHashMap.remove("Hello");
 console.log(myHashMap.getMap());
+console.log(myHashMap.length());
+myHashMap.set("iaygfdsoiuyfadg", 7);
+console.log(myHashMap.length());
+myHashMap.set("OUAhdfiloduswfg", 8);
+console.log(myHashMap.length());
 // import LinkedList from './modules/linked-list.js';
 
 // const myList = new LinkedList();

@@ -72,6 +72,14 @@ HashMap.prototype.remove = function(key) {
 
 }
 
+HashMap.prototype.length = function() {
+    let length = 0;
+
+    this._buckets.forEach((bucket) => length += bucket.size());
+    
+    return length;
+}
+
 HashMap.prototype.getMap = function() { return this._buckets };
 
 export default HashMap;
