@@ -55,6 +55,17 @@ LinkedList.prototype.get = function(key) {
     return false;
 }
 
+LinkedList.prototype.set = function(key, value) {
+    let node = this.get(key);
+
+    if (node) {
+        node.value = value;
+        return;
+    }
+
+    this.append(key, value);
+}
+
 LinkedList.prototype.has = function(key) {
     let currentNode = this._linkedList;
 

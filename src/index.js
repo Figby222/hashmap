@@ -33,6 +33,11 @@ console.log(myList.size());
 
 myList.clear();
 
+myList.set("Test", 4);
+myList.set("OAFUEhyoiuysagdoliuyfag", 4);
+
+console.log(myList.getList());
+
 // import HashMap from "./modules/hash-map.js";
 
 // const myHashMap = new HashMap()
